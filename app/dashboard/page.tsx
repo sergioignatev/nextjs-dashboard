@@ -9,7 +9,8 @@ import {
 } from '@/app/lib/data';
  
 export default async function Page() {
-  const revenue = await fetchRevenue();
+    let revenue= await fetchRevenue()
+  
   const latestInvoices = await fetchLatestInvoices();
   const {
     numberOfInvoices,
@@ -37,6 +38,7 @@ export default async function Page() {
         <RevenueChart revenue={revenue} />
         <LatestInvoices latestInvoices={latestInvoices} />
       </div>
+      <h1>{JSON.stringify(revenue)}</h1>
     </main>
   );
 }
